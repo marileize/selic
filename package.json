@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/marileize/selic/issues"
   },
-  "homepage": "https://github.com/marileize/selic#readme"
+  "homepage": "https://github.com/marileize/selic#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
