@@ -1,0 +1,19 @@
+{
+  "name": "selic",
+  "version": "1.0.0",
+  "description": "Meu projeto SELIC",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/marileize/selic.git"
+  },
+  "author": "Marileize <marileize@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marileize/selic/issues"
+  },
+  "homepage": "https://github.com/marileize/selic#readme"
+}
