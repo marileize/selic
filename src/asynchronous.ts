@@ -1,3 +1,3 @@
-export async function asyncFunc(name:string) {
-   return "Hello " + name
+export async function asyncFunc(name: string) {
+  return "Hello " + name;
 }
