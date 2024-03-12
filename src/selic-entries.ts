@@ -8,5 +8,5 @@ export async function selicEntries(initialDate: string, finalDate: string) {
     
     const response = await fetch(url.toString());
     const selic_entries = await response.json();
-    return JSON.stringify(selic_entries);
+    return selic_entries;
 }
