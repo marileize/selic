@@ -29,18 +29,33 @@ describe("selicEntries", () => {
   });
 
   test("Empty dates", async () => {
-    fetchMock.mockResponse(() => selicEntries().then((res) => "ok"));
+    fetchMock.mockResponse(JSON.stringify({ status: true }));
+    expect(await selicEntries()).toEqual({ status: true });
+    expect(fetch).toBeCalled();
+    expect(fetch).toBeCalledWith(
+      "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json",
+    );
   });
 
   test("Initial date empty", async () => {
-    fetchMock.mockResponse(() =>
-      selicEntries(undefined, new Date("2024-03-11")).then((res) => "ok"),
+    fetchMock.mockResponse(JSON.stringify({ status: true }));
+    expect(await selicEntries(undefined, new Date("2024-03-11"))).toEqual({
+      status: true,
+    });
+    expect(fetch).toBeCalled();
+    expect(fetch).toBeCalledWith(
+      "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json&dataFinal=11%2F03%2F2024",
     );
   });
 
   test("Final date empty", async () => {
-    fetchMock.mockResponse(() =>
-      selicEntries(new Date("2024-03-11")).then((res) => "ok"),
+    fetchMock.mockResponse(JSON.stringify({ status: true }));
+    expect(await selicEntries(new Date("2024-03-11"))).toEqual({
+      status: true,
+    });
+    expect(fetch).toBeCalled();
+    expect(fetch).toBeCalledWith(
+      "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json&dataInicial=11%2F03%2F2024",
     );
   });
 });

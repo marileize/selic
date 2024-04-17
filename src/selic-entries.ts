@@ -12,7 +12,7 @@ export async function selicEntries(initialDate?: Date, finalDate?: Date) {
   }
 
   const url = new URL(
-    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json",
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?",
   );
 
   url.search = constructURLParams(initialDate, finalDate);
@@ -23,6 +23,8 @@ export async function selicEntries(initialDate?: Date, finalDate?: Date) {
 
 function constructURLParams(initialDate?: Date, finalDate?: Date) {
   const params = new URLSearchParams();
+
+  params.append("formato","json");
 
   if (initialDate) {
     params.append("dataInicial", format(initialDate, "dd/MM/yyyy"));
