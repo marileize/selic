@@ -22,4 +22,22 @@ describe("selicEntries", () => {
       selicEntries(new Date("2024-03-12"), new Date("2024-03-11")),
     ).rejects.toThrow("Initial date cannot be after final date");
   });
+
+  test("Empty dates", async () => {
+    fetchMock.mockResponse(() =>
+      selicEntries(undefined, undefined).then((res) => "ok"),
+    );
+  });
+
+  test("Initial date empty", async () => {
+    fetchMock.mockResponse(() =>
+      selicEntries(undefined, new Date("2024-03-11")).then((res) => "ok"),
+    );
+  });
+
+  test("Final date empty", async () => {
+    fetchMock.mockResponse(() =>
+      selicEntries(new Date("2024-03-11"), undefined).then((res) => "ok"),
+    );
+  });
 });
