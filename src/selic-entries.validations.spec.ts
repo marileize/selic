@@ -25,7 +25,7 @@ describe("selicEntries", () => {
 
   test("Empty dates", async () => {
     fetchMock.mockResponse(() =>
-      selicEntries(undefined, undefined).then((res) => "ok"),
+      selicEntries().then((res) => "ok"),
     );
   });
 
@@ -37,7 +37,7 @@ describe("selicEntries", () => {
 
   test("Final date empty", async () => {
     fetchMock.mockResponse(() =>
-      selicEntries(new Date("2024-03-11"), undefined).then((res) => "ok"),
+      selicEntries(new Date("2024-03-11")).then((res) => "ok"),
     );
   });
 });
