@@ -7,7 +7,8 @@
     "build": "tsc",
     "test": "jest --detectOpenHandles",
     "prettier": "prettier src",
-    "prettier:fix": "prettier --write src"
+    "prettier:fix": "prettier --write src",
+    "shell":"ts-node"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "jest-fetch-mock": "^3.0.3",
     "prettier": "3.2.5",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
