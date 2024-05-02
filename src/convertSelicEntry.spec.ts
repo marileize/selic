@@ -1,7 +1,7 @@
-import { convertSelicEntry } from "./convert";
+import { convertSelicEntry } from "./convertSelicEntry";
 import { format, compareAsc } from "date-fns";
 
-describe("convert", () => {
+describe("convertSelicEntry", () => {
   test("Successful convert date and value", () => {
     expect(convertSelicEntry("08/03/2024", "0.041957")).toEqual({
       date: new Date(format("2024-03-08", "yyyy-MM-dd")),
@@ -20,4 +20,5 @@ describe("convert", () => {
   test("Invalid date and value", () => {
     expect(convertSelicEntry("20240308", "XX")).toEqual(null);
   });
+
 });
