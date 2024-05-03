@@ -1,6 +1,6 @@
 import { parseISO } from "date-fns";
 
-export function convertSelicEntry(data: string, valor: string) {
+export function convertSelicEntry({data, valor }: { data: string; valor: string }) {
   try {
     const date = parseISO(
       data.split("/").reverse().join("-") + "T00:00:00.000Z",
